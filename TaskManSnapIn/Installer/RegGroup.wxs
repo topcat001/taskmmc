@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <ComponentGroup Id="RegGroup">
+            <Component Id="cmp24D3CCAA4C05AC045D89133D4C5CE78B" Directory="TARGETDIR" Guid="10E85E06-76A8-443D-A452-EDDCB222746C" KeyPath="yes">
+                <RegistryKey ForceDeleteOnUninstall="yes" Key="SOFTWARE\Microsoft\MMC\SnapIns\FX:{ef169c9e-fd6d-4b00-aed9-3b28a5842cf6}" Root="HKLM">
+                    <RegistryValue Name="UseCustomHelp" Value="0" Type="integer" />
+                    <RegistryValue Name="Type" Value="Microsoft.ManagementConsole.TaskMan.TaskManSnapIn, TaskManSnapIn, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string" />
+                    <RegistryValue Name="ApplicationBase" Value="[System64Folder]" Type="string" />
+                    <RegistryValue Name="NameString" Value="TaskMan" Type="string" />
+                    <RegistryValue Name="Description" Value="Remote Task Manager SnapIn" Type="string" />
+                    <RegistryValue Name="Provider" Value="Quintessential Trinkets" Type="string" />
+                    <RegistryValue Name="ModuleName" Value="TaskManSnapIn.dll" Type="string" />
+                    <RegistryValue Name="AssemblyName" Value="TaskManSnapIn" Type="string" />
+                    <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" />
+                    <RegistryValue Name="FxVersion" Value="3.0.0.0" Type="string" />
+                    <RegistryValue Name="About" Value="{00000000-0000-0000-0000-000000000000}" Type="string" />
+                    <RegistryValue Name="VersionStringIndirect" Value="@[System64Folder]TaskManRes.dll,-101" Type="string" />
+                    <RegistryValue Name="IconIndirect" Value="@[System64Folder]TaskManRes.dll,-102" Type="string" />
+                    <RegistryValue Name="LargeFolderBitmapIndirect" Value="@[System64Folder]TaskManRes.dll,-104" Type="string" />
+                    <RegistryValue Name="SmallFolderBitmapIndirect" Value="@[System64Folder]TaskManRes.dll,-103" Type="string" />
+                    <RegistryValue Name="SmallSelectedFolderBitmapIndirect" Value="@[System64Folder]TaskManRes.dll,-103" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp4C5EC8C01897EA248252F01C29D0B6F4" Directory="TARGETDIR" Guid="ECD6DFB6-824B-441B-9604-CD4FDBE5B0EC" KeyPath="yes">
+                <RegistryKey ForceCreateOnInstall="yes" Key="SOFTWARE\Microsoft\MMC\SnapIns\FX:{ef169c9e-fd6d-4b00-aed9-3b28a5842cf6}\NodeTypes" Root="HKLM" />
+            </Component>
+            <Component Id="cmp822A6291C08DAFA8ADB9BBC1DD778895" Directory="TARGETDIR" Guid="A4551A2D-BB98-4BA2-A827-C72CCDBBC79D" KeyPath="yes">
+                <RegistryKey ForceCreateOnInstall="yes" Key="SOFTWARE\Microsoft\MMC\SnapIns\FX:{ef169c9e-fd6d-4b00-aed9-3b28a5842cf6}\Standalone" Root="HKLM" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+  <Product Name='TaskManSnapIn 1.0' Id='F45B2C63-12FB-4FFA-9349-C8CDB356F197' UpgradeCode='BB9C9C94-1AE7-4DB7-B187-57CDE3B8F247'
+    Language='1033' Codepage='1252' Version='1.0.0' Manufacturer='Quintessential Trinkets Inc.'>
+
+    <Package Id='*' Keywords='Installer'
+      Description="Quintessential Trinkets' TaskManSnapIn 1.0 Installer"
+      Comments='TaskManSnapIn is a registered trademark of Quintessential Trinkets Inc.' Manufacturer='Quintessential Trinkets Inc.'
+      InstallPrivileges="elevated" InstallScope="perMachine"
+      InstallerVersion='200' Languages='1033' Compressed='yes' SummaryCodepage='1252' />
+
+    <Media Id='1' Cabinet='Sample.cab' EmbedCab='yes' DiskPrompt="CD-ROM #1" />
+    <Property Id='DiskPrompt' Value="Quintessential Trinkets' TaskManSnapIn 1.0 Installation [1]" />
+
+    <Directory Id='TARGETDIR' Name='SourceDir'>
+      <Directory Id='System64Folder' Name='System64'>
+
+            <Component Id='MainExecutable' Guid='D54FBB8E-FE8F-471A-BD53-AA5F0B26BF13'>
+              <File Id='TaskManSnapInDLL' Name='TaskManSnapIn.dll' DiskId='1' Source='TaskManSnapIn.dll' KeyPath='yes' />
+            </Component>
+
+            <Component Id='HelperLibrary' Guid='318A60B4-334F-4242-BB33-06534B3D1A46'>
+              <File Id='TaskManResDLL' Name='TaskManRes.dll' DiskId='1' Source='TaskManRes.dll' KeyPath='yes' />
+            </Component>
+
+      </Directory>
+
+    </Directory>
+
+    <Feature Id='Complete' Level='1'>
+      <ComponentRef Id='MainExecutable' />
+      <ComponentRef Id='HelperLibrary' />
+      <ComponentGroupRef Id='RegGroup' />
+    </Feature>
+
+    <UIRef Id="WixUI_Minimal" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+
+    <Icon Id='ProductIcon' SourceFile='app.ico' />
+    <Property Id='ARPPRODUCTICON' Value='ProductIcon' />
+
+  </Product>
+</Wix>

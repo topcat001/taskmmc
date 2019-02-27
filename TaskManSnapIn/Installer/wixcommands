@@ -1,0 +1,6 @@
+Convert registry export to wix source:
+heat reg .\entries.reg -cg RegGroup -out RegGroup.wxs
+
+Compile and link installer from fragments:
+candle.exe -arch x64 .\TaskManSnapIn.wxs .\RegGroup.wxs
+light.exe -ext WixUIExtension -out TaskManSnapIn.msi .\TaskManSnapIn.wixobj .\RegGroup.wixobj
